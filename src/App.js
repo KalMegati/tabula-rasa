@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from './Components/Navbar';
+import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  activate = event => {
+    event.target.classList.add("white-text")
+  }
+
+  deactivate = event => {
+    event.target.classList.remove("white-text")
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <ul className="list-group col">
+          <li className="list-group-item bg-primary" onMouseEnter={e => this.activate(e)} onMouseLeave={e => this.deactivate(e)} >sus</li>
+          <li className="list-group-item bg-primary">joj</li>
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default App;
