@@ -1,29 +1,33 @@
 import React from 'react';
-import Navbar from './Components/Navbar';
+import Navbar from './components/Navbar';
 import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import './App.css';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
 
-  activate = event => {
-    event.target.classList.add("white-text")
-  }
+  // activate = event => {
+  //   event.target.classList.add("white-text")
+  // }
 
-  deactivate = event => {
-    event.target.classList.remove("white-text")
-  }
+  // deactivate = event => {
+  //   event.target.classList.remove("white-text")
+  // }
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
-        <Navbar />
+        <Navbar mouse={this.props} />
         <ul className="list-group col">
-          <li className="list-group-item bg-primary" onMouseEnter={e => this.activate(e)} onMouseLeave={e => this.deactivate(e)} >sus</li>
-          <li className="list-group-item bg-primary">joj</li>
+          <li className="list-group-item bg-primary" onMouseEnter={this.props.mouseEnter} onMouseLeave={this.props.mouseLeave} >sus</li>
+          <li className="list-group-item bg-primary" onMouseEnter={this.props.mouseEnter} onMouseLeave={this.props.mouseLeave} >joj</li>
         </ul>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(App);
