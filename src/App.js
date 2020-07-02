@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import './App.css';
 import { connect } from 'react-redux';
+import { fetchUsers } from './actions/actions'
 
 class App extends React.Component {
 
@@ -13,6 +14,10 @@ class App extends React.Component {
   // deactivate = event => {
   //   event.target.classList.remove("white-text")
   // }
+
+  componentDidMount() {
+    this.props.fetchUsers()
+  }
 
   render() {
     console.log(this.props)
@@ -30,4 +35,10 @@ class App extends React.Component {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
