@@ -3,7 +3,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
     create_table :characters do |t|
       t.string :name
       t.string :blurb
-      t.belongs_to :writer
+      t.belongs_to :user
 
       t.timestamps
     end
