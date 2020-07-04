@@ -4,6 +4,12 @@
   vertical-align: top;
 }
 
+.main-screen {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
+
 .white-text {
   color: white
 }
