@@ -9,7 +9,7 @@ class CharactersContainer extends React.Component {
 
     render() {
       return (
-        <div class="btn-group-vertical">
+        <div className="btn-group-vertical">
             {this.props.characters.map(char => 
                 <CharacterButton character={char} />    
             )}

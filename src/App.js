@@ -10,6 +10,10 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchUsers } from './actions/actions'
 
+import { Route } from 'react-router-dom';
+
+import WelcomeScreen from './screens/WelcomeScreen'
+
 class App extends React.Component {
 
   // activate = event => {
@@ -36,7 +40,9 @@ class App extends React.Component {
         </div>
         <div className="main-screen">
           
-          {/* {this.props.users.map(user => <UserContainer active={true} user={user}/>) } */}
+          {/* <SheetContainer /> */}
+
+          <Route path="/welcome" component={WelcomeScreen} />
           
         </div>
       </div>
