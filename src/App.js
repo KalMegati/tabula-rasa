@@ -4,15 +4,18 @@ import UserContainer from './containers/UserContainer'
 
 import 'bootswatch/dist/cerulean/bootstrap.min.css';
 // import 'bootswatch/dist/slate/bootstrap.min.css';
-// import 'bootswatch/dist/solar/bootstrap.min.css';
+// import 'bootswatch/dist/journal/bootstrap.min.css';
 
-import './App.css';
+// import './App.css';
 import { connect } from 'react-redux';
 import { fetchUsers } from './actions/actions'
 
 import { Route } from 'react-router-dom';
 
 import WelcomeScreen from './screens/WelcomeScreen'
+import SettingsScreen from './screens/SettingsScreen'
+import LoginScreen from './screens/LoginScreen'
+import AboutScreen from './screens/AboutScreen'
 
 class App extends React.Component {
 
@@ -33,7 +36,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar mouse={this.props} />
-        <div className="col">
+        <div className="menu-screen">
           
         {this.props.users.map(user => <UserContainer active={true} user={user}/>) }
 
@@ -43,6 +46,9 @@ class App extends React.Component {
           {/* <SheetContainer /> */}
 
           <Route path="/welcome" component={WelcomeScreen} />
+          <Route path="/settings" component={SettingsScreen} />
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/about" component={AboutScreen} />
           
         </div>
       </div>

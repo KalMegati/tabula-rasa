@@ -1,9 +1,16 @@
-export default function root(state = { users: [], characters: [], loading: false}, action) {
+const origStore = { users: [], characters: [], loading: false, style: "journal"}
+
+export default function root(state = origStore, action) {
 
     switch(action.type) {
-  
+      
+      case 'SELECT_STYLE':
+        return {
+          ...state,
+          style: action.style
+        }
+
       case 'LOAD_USERS':
-        console.log("LOAD")
         return {
           ...state,
           users: [...state.users],
@@ -11,7 +18,6 @@ export default function root(state = { users: [], characters: [], loading: false
         }
 
       case 'ADD_USERS':
-        console.log(action.users)
         return {
           ...state, 
           users: action.users,
@@ -19,13 +25,14 @@ export default function root(state = { users: [], characters: [], loading: false
         }
 
       default:
-        let enter = e => e.target.classList.add("white-text")
-        let leave = e => e.target.classList.remove("white-text")
-        return {
-          ...state, 
-          mouseEnter: enter,
-          mouseLeave: leave
-        }
+        // let enter = e => e.target.classList.add("white-text")
+        // let leave = e => e.target.classList.remove("white-text")
+        // return {
+        //   ...state, 
+        //   mouseEnter: enter,
+        //   mouseLeave: leave
+        // }
+        return state
     }
   
 }

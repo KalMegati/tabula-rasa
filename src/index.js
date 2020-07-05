@@ -11,12 +11,15 @@ import thunk from 'redux-thunk';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import StyleSelector from './styles/StyleSelector'
+
 let store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Router>
     <Provider store={store}>
       <App />
+      {/* <StyleSelector /> */} 
     </Provider>
   </Router>,
   document.getElementById('root')

@@ -1,6 +1,6 @@
-.col {
+.menu-screen {
   display: inline-block;
-  width: 25%;
+  width: 20%;
   vertical-align: top;
 }
 
@@ -8,6 +8,7 @@
   display: inline-block;
   width: 75%;
   vertical-align: top;
+  /* float: right; */
 }
 
 .white-text {
