@@ -9,8 +9,8 @@
 Character.delete_all
 User.delete_all
 
-kal = User.create(handle: "Kal")
-shweta = User.create(handle: "Shweta")
+kal = User.create(handle: "Kal", password: "Kal")
+shweta = User.create(handle: "Shweta", password: "Shweta")
 
 azad = Character.create(name: "Azad", user: kal)
 ruby = Character.create(name: "Ruby", user: kal)

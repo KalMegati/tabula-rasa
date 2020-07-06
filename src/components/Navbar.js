@@ -9,18 +9,18 @@ class Navbar extends React.Component {
     return (
         <nav className="navbar navbar-expand navbar-light bg-light">
             <div id="navbarColor03" >
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
                         {/* <a class="nav-link" href="welcome">Home <span class="sr-only">(current)</span></a> */}
                         <div className="nav-link"><NavLink to="/welcome">Home</NavLink></div>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <div className="nav-link"><NavLink to="/login">Login</NavLink></div>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <div className="nav-link"><NavLink to="/settings">Settings</NavLink></div>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <div className="nav-link"><NavLink to="/about">About</NavLink></div>
                     </li>
                 </ul>

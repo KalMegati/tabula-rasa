@@ -28,17 +28,17 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
+    console.log("joj")
     this.props.fetchUsers()
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <Navbar mouse={this.props} />
         <div className="menu-screen">
           
-        {this.props.users.map(user => <UserContainer active={true} user={user}/>) }
+        {this.props.users.map(user => <UserContainer user={user}/>) }
 
         </div>
         <div className="main-screen">

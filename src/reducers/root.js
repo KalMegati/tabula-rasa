@@ -10,11 +10,18 @@ export default function root(state = origStore, action) {
           style: action.style
         }
 
-      case 'LOAD_USERS':
+      case 'LOADING':
         return {
           ...state,
-          users: [...state.users],
           loading: true
+        }
+
+      case 'CREATE_USER':
+        console.log(action.user)
+        return {
+          ...state,
+          users: [...state.users, action.user],
+          loading: false
         }
 
       case 'ADD_USERS':
@@ -25,13 +32,6 @@ export default function root(state = origStore, action) {
         }
 
       default:
-        // let enter = e => e.target.classList.add("white-text")
-        // let leave = e => e.target.classList.remove("white-text")
-        // return {
-        //   ...state, 
-        //   mouseEnter: enter,
-        //   mouseLeave: leave
-        // }
         return state
     }
   
