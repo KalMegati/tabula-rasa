@@ -18,8 +18,8 @@ let store = createStore(rootReducer, applyMiddleware(thunk))
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <App />
-      {/* <StyleSelector /> */} 
+      {/* <App /> */}
+      <StyleSelector /> 
     </Provider>
   </Router>,
   document.getElementById('root')

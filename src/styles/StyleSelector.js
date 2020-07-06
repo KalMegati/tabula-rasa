@@ -1,7 +1,4 @@
 import React, { Suspense } from 'react'
-// import Cerulean from './Cerulean'
-// import Journal from './Journal'
-// import Slate from './Slate'
 import App from '../App'
 import '../App.css';
 import { connect } from 'react-redux';
@@ -11,10 +8,6 @@ const Journal = React.lazy(() => import('./Journal'))
 const Slate = React.lazy(() => import('./Slate'))
 
 class StyleSelector extends React.Component {
-
-    // cerulean = React.lazy(() => import('./Cerulean'))
-    // journal = React.lazy(() => import('./Journal'))
-    // slate = React.lazy(() => import('./Slate'))
 
     styleSelect(style) {
         switch(style) {

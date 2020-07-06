@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class SettingsScreen extends React.Component {
 
   state = {
-    stateStyle: "journal"
+    stateStyle: ""
   }
 
   handleClick = (event) => {
