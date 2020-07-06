@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createUser } from '../actions/actions'
+import { createUser, loginUser } from '../actions/actions'
 
 class LoginScreen extends React.Component {
 
@@ -10,24 +10,47 @@ class LoginScreen extends React.Component {
     password_confirmation: ""
   }
 
-  handleSubmit = (event) => {
+  handleSignup = (event) => {
     event.preventDefault()
     this.props.createUser(this.state)
   }
 
+  handleLogin = (event) => {
+    event.preventDefault()
+    this.props.loginUser(this.state)
+  }
+
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)} onChange={(e) => this.setState({[e.target.name]: e.target.value})}>
-        CREATE USER
+      <div>
+
+        <form onSubmit={e => this.handleSignup(e)} onChange={(e) => this.setState({[e.target.name]: e.target.value})}>
+          SIGN UP
+          <br />
+          Handle: <input type="text" name="handle" value={this.state.handle}/>
+          <br />
+          Password: <input type="text" name="password" value={this.state.password}/>
+          <br />
+          Confirm: <input type="text" name="password_confirmation" value={this.state.password_confirmation}/>
+          <br />
+          <input type="submit" />
+        </form>
+
         <br />
-        Handle: <input type="text" name="handle" value={this.state.handle}/>
-        <br />
-        Password: <input type="text" name="password" value={this.state.password}/>
-        <br />
-        Confirm: <input type="text" name="password_confirmation" value={this.state.password_confirmation}/>
-        <br />
-        <input type="submit" />
-      </form>
+
+        <form onSubmit={e => this.handleLogin(e)} onChange={(e) => this.setState({[e.target.name]: e.target.value})}>
+          LOG IN
+          <br />
+          Handle: <input type="text" name="handle" value={this.state.handle}/>
+          <br />
+          Password: <input type="text" name="password" value={this.state.password}/>
+          <br />
+          Confirm: <input type="text" name="password_confirmation" value={this.state.password_confirmation}/>
+          <br />
+          <input type="submit" />
+        </form>
+
+      </div>
     );
   }
 
@@ -35,7 +58,8 @@ class LoginScreen extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createUser: (user) => dispatch(createUser(user))
+    createUser: (user) => dispatch(createUser(user)),
+    loginUser: (user) => dispatch(loginUser(user))
   }
 }
 

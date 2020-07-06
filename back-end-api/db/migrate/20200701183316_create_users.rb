@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :handle
       t.string :password_digest
       t.string :icon
+      t.string :style, :default => "cerulean"
 
       t.timestamps
     end

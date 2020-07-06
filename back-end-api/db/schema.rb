@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_183834) do
     t.string "handle"
     t.string "password_digest"
     t.string "icon"
+    t.string "style", default: "cerulean"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

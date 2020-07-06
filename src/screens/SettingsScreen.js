@@ -19,24 +19,30 @@ class SettingsScreen extends React.Component {
 
   render() {
     return (
-      <div class="btn-group">
+      <div>
+        <div class="btn-group">
 
-        <button type="button" class="btn btn-secondary" value="cerulean"
-          onClick={ (e) => this.handleClick(e) }
-        >Cerulean</button>
+          <button type="button" class="btn btn-secondary" value="cerulean"
+            onClick={ (e) => this.handleClick(e) }
+          >Cerulean</button>
 
-        <button type="button" class="btn btn-secondary" value="journal"
-          onClick={ (e) => this.handleClick(e) }
-        >Journal</button>
+          <button type="button" class="btn btn-secondary" value="journal"
+            onClick={ (e) => this.handleClick(e) }
+          >Journal</button>
 
-        <button type="button" class="btn btn-secondary" value="slate"
-          onClick={ (e) => this.handleClick(e) }
-        >Slate</button>
+          <button type="button" class="btn btn-secondary" value="slate"
+            onClick={ (e) => this.handleClick(e) }
+          >Slate</button>
 
-        <button type="button" class="btn btn-primary"
-          onClick={this.handleSubmit}
-        >Style Switch</button>
+          <button type="button" class="btn btn-primary"
+            onClick={this.handleSubmit}
+          >Style Switch</button>
 
+        </div>
+        <br />
+        <br />
+        <br />
+        <p>Style changes may require page refresh to complete.</p>
       </div>
     );
   }

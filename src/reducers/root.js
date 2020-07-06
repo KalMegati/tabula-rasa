@@ -1,4 +1,4 @@
-const origStore = { users: [], characters: [], loading: false, style: localStorage.style}
+const origStore = { users: [], characters: [], loading: false, user_id: null, style: localStorage.style}
 
 export default function root(state = origStore, action) {
 
@@ -15,6 +15,15 @@ export default function root(state = origStore, action) {
         return {
           ...state,
           loading: true
+        }
+
+      case 'LOGIN_USER':
+        localStorage.setItem("user_id", action.user.id)
+        localStorage.setItem("style", action.user.style)
+        return {
+          ...state,
+          user_id: action.user.id,
+          style: action.user.style
         }
 
       case 'CREATE_USER':

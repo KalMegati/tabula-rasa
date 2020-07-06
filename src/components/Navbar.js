@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 // import logo from './logo.svg';
 // import 'bootswatch/dist/cerulean/bootstrap.min.css';
 // import './App.css';
@@ -23,6 +24,9 @@ class Navbar extends React.Component {
                     <li className="nav-item">
                         <div className="nav-link"><NavLink to="/about">About</NavLink></div>
                     </li>
+                    <li className="nav-item">
+                        <div className="nav-link"><NavLink to="/">{this.props.style}</NavLink></div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -30,4 +34,9 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+    console.log(state.style)
+    return {style: state.style}
+}
+
+export default connect(mapStateToProps)(Navbar);
