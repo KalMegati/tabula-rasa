@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createUser, loginUser } from '../actions/actions'
+import { createUser, loginUser, logoutUser } from '../actions/actions'
 
 class LoginScreen extends React.Component {
 
@@ -18,6 +18,10 @@ class LoginScreen extends React.Component {
   handleLogin = (event) => {
     event.preventDefault()
     this.props.loginUser(this.state)
+  }
+
+  handleLogout = () => {
+    this.props.logoutUser()
   }
 
   render() {
@@ -50,6 +54,10 @@ class LoginScreen extends React.Component {
           <input type="submit" />
         </form>
 
+        <br />
+
+        <button onClick={this.handleLogout}>KILL</button>
+
       </div>
     );
   }
@@ -59,7 +67,8 @@ class LoginScreen extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     createUser: (user) => dispatch(createUser(user)),
-    loginUser: (user) => dispatch(loginUser(user))
+    loginUser: (user) => dispatch(loginUser(user)),
+    logoutUser: () => dispatch(logoutUser())
   }
 }
 

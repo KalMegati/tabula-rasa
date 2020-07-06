@@ -25,7 +25,7 @@ class Navbar extends React.Component {
                         <div className="nav-link"><NavLink to="/about">About</NavLink></div>
                     </li>
                     <li className="nav-item">
-                        <div className="nav-link"><NavLink to="/">{this.props.style}</NavLink></div>
+                        <div className="nav-link"><NavLink to="/">{this.props.user_id}</NavLink></div>
                     </li>
                 </ul>
             </div>
@@ -35,8 +35,7 @@ class Navbar extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state.style)
-    return {style: state.style}
+    return {user_id: state.user_id}
 }
 
 export default connect(mapStateToProps)(Navbar);

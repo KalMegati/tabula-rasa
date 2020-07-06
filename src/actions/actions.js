@@ -30,6 +30,12 @@ export const loginUser = (user) => {
   }
 }
 
+export const logoutUser = () => {
+  return (dispatch) => {
+    dispatch({ type: 'LOGOUT_USER'})
+  }
+}
+
 export const createUser = (user) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})
