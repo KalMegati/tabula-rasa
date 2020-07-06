@@ -1,4 +1,26 @@
 
+export const updateUser = (user, user_id) => {
+  return (dispatch) => {
+    console.log(user)
+    console.log(user_id)
+    dispatch({ type: 'LOADING'})
+    fetch(`http://localhost:3001/api/users/${user_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        user
+      })
+    }).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'UPDATE_USER', user: responseJSON})
+    })
+  }
+}
+
 export const fetchUsers = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})

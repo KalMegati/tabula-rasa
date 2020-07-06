@@ -1,4 +1,4 @@
-const origStore = { users: [], characters: [], loading: false, user_id: "guest", style: localStorage.style}
+const origStore = { users: [], characters: [], loading: false, user_id: localStorage.user_id, style: localStorage.style}
 
 export default function root(state = origStore, action) {
 
@@ -30,10 +30,9 @@ export default function root(state = origStore, action) {
         localStorage.clear()
         return {
           ...state,
-          user_id: "guest",
+          user_id: undefined,
           style: localStorage.style
         }
-        return 
 
       case 'CREATE_USER':
         console.log(action.user)
@@ -41,6 +40,14 @@ export default function root(state = origStore, action) {
           ...state,
           users: [...state.users, action.user],
           loading: false
+        }
+
+      case 'UPDATE_USER':
+        debugger
+        return {
+          ...state,
+          user_id: action.user.id,
+          style: action.user.style
         }
 
       case 'ADD_USERS':

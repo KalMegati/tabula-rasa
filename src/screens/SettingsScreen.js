@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { updateUser } from '../actions/actions'
 
 class SettingsScreen extends React.Component {
 
@@ -14,7 +15,7 @@ class SettingsScreen extends React.Component {
 
   handleSubmit = () => {
     // console.log(this.state.stateStyle)
-    this.props.selectStyle(this.state.stateStyle)
+    this.props.updateUser({style: this.state.stateStyle}, this.props.user_id)
   }
 
   render() {
@@ -49,12 +50,12 @@ class SettingsScreen extends React.Component {
 
 }
 
-const mapStateToProps = state => state
+const mapStateToProps = state => {return {user_id: state.user_id}}
 
 const mapDispatchToProps = dispatch => {
   return {
-    selectStyle: (style) => dispatch({ type: 'SELECT_STYLE', style: style})
+    updateUser: (user, user_id) => dispatch(updateUser(user, user_id))
   }
 }
 
-export default connect(null, mapDispatchToProps)(SettingsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);

@@ -17,10 +17,16 @@ class UsersController < ApplicationController
         # render json: {some: "ERROR"}
     end
 
+    def update
+        user = User.find(params[:id])
+        binding.pry
+        render json: user, include: :characters
+    end
+
     private
 
     def user_params
-        params.require('user').permit(:handle, :password, :password_confirmation, :icon)
+        params.require('user').permit(:handle, :password, :password_confirmation, :icon, :style)
     end
 
 end
