@@ -17,6 +17,8 @@ class StyleSelector extends React.Component {
                 return <Journal />
             case 'slate':
                 return <Slate />
+            default:
+                return <Cerulean />
         }
     }
 

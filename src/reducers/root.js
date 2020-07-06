@@ -1,10 +1,11 @@
-const origStore = { users: [], characters: [], loading: false, style: "journal"}
+const origStore = { users: [], characters: [], loading: false, style: localStorage.style}
 
 export default function root(state = origStore, action) {
 
     switch(action.type) {
       
       case 'SELECT_STYLE':
+        localStorage.setItem("style", action.style)
         return {
           ...state,
           style: action.style

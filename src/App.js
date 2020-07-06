@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import UserContainer from './containers/UserContainer'
 
-import 'bootswatch/dist/cerulean/bootstrap.min.css';
+// import 'bootswatch/dist/cerulean/bootstrap.min.css';
 // import 'bootswatch/dist/slate/bootstrap.min.css';
 // import 'bootswatch/dist/journal/bootstrap.min.css';
 
