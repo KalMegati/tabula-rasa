@@ -36,6 +36,9 @@ class Navbar extends React.Component {
                         <li className="nav-item">
                             <div className="nav-link"><NavLink to="/">{this.userDisplay()}</NavLink></div>
                         </li>
+                        <li className="nav-item">
+                            <div className="nav-link"><NavLink to="/newsheet">New Sheet</NavLink></div>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -44,7 +47,6 @@ class Navbar extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // debugger
     return {user_id: state.user_id}
 }
 

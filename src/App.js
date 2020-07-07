@@ -16,6 +16,7 @@ import WelcomeScreen from './screens/WelcomeScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import LoginScreen from './screens/LoginScreen'
 import AboutScreen from './screens/AboutScreen'
+import NewSheetScreen from './screens/NewSheetScreen'
 
 class App extends React.Component {
 
@@ -42,13 +43,12 @@ class App extends React.Component {
 
         </div>
         <div className="main-screen">
-          
-          {/* <SheetContainer /> */}
 
           <Route path="/welcome" component={WelcomeScreen} />
           <Route path="/settings" component={SettingsScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/about" component={AboutScreen} />
+          <Route path="/newsheet" component={NewSheetScreen} />
           
         </div>
       </div>
