@@ -4,5 +4,9 @@ Rails.application.routes.draw do
     post :users, to: 'users#create'
     patch '/users/:id', to: 'users#update'
     post :sessions, to: 'sessions#create'
+
+    get :characters, to: 'characters#index'
+    post :characters, to: 'characters#create'
+
   end
 end

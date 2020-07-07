@@ -1,3 +1,20 @@
+export const createCharacter = (character) => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING'})
+    fetch('http://localhost:3001/api/characters', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(character)
+    }).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'CREATE_CHARACTER', character: responseJSON })
+    })
+  }
+}
 
 export const updateUser = (user, user_id) => {
   return (dispatch) => {

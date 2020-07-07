@@ -17,6 +17,28 @@ export default function root(state = origStore, action) {
           loading: true
         }
 
+      case 'CREATE_CHARACTER':
+        const updatedUser = state.users.find(
+          user => user.id === action.character.user_id
+        )
+        updatedUser.characters.push(action.character)
+        return {
+          ...state,
+          users: [
+            ...state.users.filter(user => user != updatedUser),
+            updatedUser
+          ],
+          loading: false
+        }
+
+      case 'UPDATE_CHARACTER':
+        localStorage.setItem("user_id", action.user.id)
+        localStorage.setItem("style", action.user.style)
+        return {
+          ...state,
+          loading: false
+        }
+
       case 'LOGIN_USER':
         localStorage.setItem("user_id", action.user.id)
         localStorage.setItem("style", action.user.style)
@@ -35,7 +57,6 @@ export default function root(state = origStore, action) {
         }
 
       case 'CREATE_USER':
-        console.log(action.user)
         return {
           ...state,
           users: [...state.users, action.user],
