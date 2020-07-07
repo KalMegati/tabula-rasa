@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 class Navbar extends React.Component {
 
     userDisplay = () => {
-        debugger
         if (!!this.props.user_id) {
             return this.props.user_id
         } else {
@@ -17,7 +16,6 @@ class Navbar extends React.Component {
     }
 
     render() {
-        //   debugger
         return (
             <nav className="navbar navbar-expand navbar-light bg-light">
                 <div id="navbarColor03" >

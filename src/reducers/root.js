@@ -43,11 +43,13 @@ export default function root(state = origStore, action) {
         }
 
       case 'UPDATE_USER':
-        debugger
+        localStorage.setItem("user_id", action.user.id)
+        localStorage.setItem("style", action.user.style)
         return {
           ...state,
           user_id: action.user.id,
-          style: action.user.style
+          style: action.user.style,
+          loading: false
         }
 
       case 'ADD_USERS':

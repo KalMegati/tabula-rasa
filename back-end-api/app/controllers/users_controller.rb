@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        binding.pry
+        user.update(user_params)
         render json: user, include: :characters
     end
 

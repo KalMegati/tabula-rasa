@@ -5,7 +5,7 @@ import { updateUser } from '../actions/actions'
 class SettingsScreen extends React.Component {
 
   state = {
-    stateStyle: ""
+    stateStyle: "cerulean"
   }
 
   handleClick = (event) => {
