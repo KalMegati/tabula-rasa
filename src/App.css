@@ -5,10 +5,46 @@
 }
 
 .main-screen {
-  display: inline-block;
-  width: 75%;
+  /* display: inline-block; */
+  width: 79%;
   vertical-align: top;
-  /* float: right; */
+  float: right;
+}
+
+.split-screen {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.long-entry {
+  width: 100%;
+}
+
+.short-entry {
+  width: 88%;
+  float: right;
+}
+
+.single-entry {
+  display: inline-block;
+  width: 11%;
+}
+
+
+
+.spacer-5 {
+  display: inline-block;
+  width: 5%;
+  vertical-align: top;
+}
+
+.element-screen {
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+  border-style: solid;
+  margin: 1px;
 }
 
 .white-text {
