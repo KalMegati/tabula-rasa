@@ -1,3 +1,21 @@
+export const createElement = (element) => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING'})
+    fetch('http://localhost:3001/api/elements', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ element })
+    }).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'CREATE_ELEMENT', element: responseJSON })
+    })
+  }
+}
+
 export const createCharacter = (character) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})
@@ -7,7 +25,7 @@ export const createCharacter = (character) => {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify(character)
+      body: JSON.stringify({ character })
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
@@ -27,9 +45,7 @@ export const updateUser = (user, user_id) => {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify({
-        user
-      })
+      body: JSON.stringify({ user })
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
@@ -78,15 +94,14 @@ export const logoutUser = () => {
 export const createUser = (user) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})
+    debugger
     fetch('http://localhost:3001/api/users', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify({
-        user
-      })
+      body: JSON.stringify({ user })
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
