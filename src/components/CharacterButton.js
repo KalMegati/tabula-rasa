@@ -1,14 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class CharacterButton extends React.Component {
   render() {
     return (
+      <NavLink to={`/characters/${this.props.character.id}`}>
         <button
             className="btn btn-secondary"
-            onClick={() => console.log(this.props.character.name)}
         >{this.props.character.name}</button>
+      </NavLink>
     );
   }
 }
 
 export default CharacterButton;
+
