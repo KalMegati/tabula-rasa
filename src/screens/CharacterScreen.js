@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CharacterSheet from '../components/CharacterSheet'
-import { Route } from 'react-router-dom';
 
-const CharacterScreen = ({ match, characters }) => (
-        
-    <Route 
-        path={`${match.url}/:characterId`} 
-        render={routerProps => {
-            return <CharacterSheet {...routerProps} characters={characters} />
-        }}
-    />
+class CharacterScreen extends React.Component {
 
-)
+    character = () => {
+      const id = this.props.match.params.characterId
+      return this.props.characters.find(
+        character => character.id === parseInt(id)
+      ).name
+    }
+
+    render() {
+      return (
+      <div>{this.character()}</div>
+      );
+    }
+
+}
 
 export default CharacterScreen
