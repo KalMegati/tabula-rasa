@@ -22,8 +22,16 @@ ActiveRecord::Schema.define(version: 2020_07_01_183834) do
   end
 
   create_table "elements", force: :cascade do |t|
-    t.string "name"
-    t.string "blurb"
+    t.string "icon1"
+    t.string "icon2"
+    t.string "icon3"
+    t.string "label1"
+    t.string "label2"
+    t.string "label3"
+    t.text "text1"
+    t.text "text2"
+    t.text "text3"
+    t.string "active"
     t.integer "character_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

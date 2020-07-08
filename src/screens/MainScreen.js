@@ -24,12 +24,17 @@ class MainScreen extends React.Component {
         <Route path="/newsheet" component={NewSheetScreen} />
         {/* <Route path='/characters' render={routerProps => <CharacterScreen {...routerProps} characters={this.props.characters}/>} /> */}
         <Route 
-            path="/characters/:characterId"
-            render={routerProps => {
-                return <CharacterScreen {...routerProps} characters={this.props.characters} />
-            }}
+          path="/characters/:characterId"
+          render={routerProps => {
+            return <CharacterScreen {...routerProps} characters={this.props.characters} />
+          }}
         />
-        <Route path='/elementedit' component={ElementScreen} />
+        <Route
+          path='/elementedit/:characterId'
+          render={routerProps => {
+            return <ElementScreen {...routerProps}/>
+          }}
+        />
       </div>
     );
   }

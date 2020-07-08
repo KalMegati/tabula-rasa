@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     get :characters, to: 'characters#index'
     post :characters, to: 'characters#create'
 
+    post :elements, to: 'elements#create'
+
   end
 end
