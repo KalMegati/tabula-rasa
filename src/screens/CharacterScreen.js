@@ -8,8 +8,16 @@ class CharacterScreen extends React.Component {
 
   componentDidMount() {
     const id = parseInt(this.props.match.params.characterId)
-    console.log(id)
     this.props.fetchCharacter(id)
+  }
+
+  componentDidUpdate() {
+    const id = parseInt(this.props.match.params.characterId)
+    this.props.fetchCharacter(id)
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (this.props.character.id != nextProps.match.params.characterId)
   }
 
   // character = () => {
@@ -24,7 +32,7 @@ class CharacterScreen extends React.Component {
   }
 
   loadingBuffer = () => {
-    if (this.props.character.id) {
+    // if (this.props.character.id) {
       return (<div>
         <h1>{this.props.character.name}</h1>
         <br />
@@ -36,12 +44,14 @@ class CharacterScreen extends React.Component {
           >New Element</button>
         </NavLink>
       </div>)
-    } else {
-      return <h1>LOADING</h1>
-    }
+    // } else {
+    //   return <h1>LOADING</h1>
+    // }
   }
 
   render() {
+    console.log(this.props.match.params.characterId)
+    console.log(this.props.character.id)
     return (
       this.loadingBuffer()
     );
