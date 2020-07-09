@@ -19,7 +19,11 @@ export default function root(state = origStore, action) {
 
       case 'CREATE_ELEMENT':
         console.log(action)
-        return {...state, loading: false}
+        return {
+          ...state,
+          character: action.character,
+          loading: false
+        }
 
       case 'CREATE_CHARACTER':
         const updatedUser = state.users.find(

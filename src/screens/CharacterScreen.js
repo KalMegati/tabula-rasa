@@ -17,7 +17,7 @@ class CharacterScreen extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return (this.props.character.id != nextProps.match.params.characterId)
+    return ((this.props.character.id != nextProps.match.params.characterId) || (this.props.character.entities != nextProps.character.entities))
   }
 
   // character = () => {

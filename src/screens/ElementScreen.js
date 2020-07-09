@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createElement } from '../actions/actions'
+import { withRouter } from 'react-router-dom';
 
 class ElementScreen extends React.Component {
 
@@ -21,6 +22,7 @@ class ElementScreen extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createElement(this.state)
+    setTimeout(() => this.props.history.push(`/characters/${this.state.character_id}`), 1000)
   }
 
   render() {
@@ -59,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(ElementScreen)
+export default connect(null, mapDispatchToProps)(withRouter(ElementScreen))

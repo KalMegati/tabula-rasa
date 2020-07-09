@@ -11,7 +11,7 @@ export const createElement = (element) => {
     }).then(response => {
       return response.json()
     }).then(responseJSON => {
-      dispatch({ type: 'CREATE_ELEMENT', element: responseJSON })
+      dispatch({ type: 'CREATE_ELEMENT', character: responseJSON })
     })
   }
 }
