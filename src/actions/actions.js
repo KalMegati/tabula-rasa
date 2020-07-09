@@ -1,4 +1,5 @@
-export const createElement = (element) => {
+export const createElement = (element, history) => {
+  // debugger
   return (dispatch) => {
     dispatch({ type: 'LOADING'})
     fetch('http://localhost:3001/api/elements', {
@@ -12,6 +13,8 @@ export const createElement = (element) => {
       return response.json()
     }).then(responseJSON => {
       dispatch({ type: 'CREATE_ELEMENT', character: responseJSON })
+    }).then(promise => {
+      history.push(`/characters/${element.character_id}`)
     })
   }
 }

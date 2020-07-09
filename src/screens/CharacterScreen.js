@@ -50,8 +50,6 @@ class CharacterScreen extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.characterId)
-    console.log(this.props.character.id)
     return (
       this.loadingBuffer()
     );

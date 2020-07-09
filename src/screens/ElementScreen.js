@@ -21,8 +21,10 @@ class ElementScreen extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.createElement(this.state)
-    setTimeout(() => this.props.history.push(`/characters/${this.state.character_id}`), 1000)
+    this.props.createElement(this.state, this.props.history)
+    // .then(response => this.props.history.push(`/characters/${this.state.character_id}`))
+    // setTimeout(() => this.props.history.push(`/characters/${this.state.character_id}`), 1000)
+    // this.props.history.push(`/characters/${this.state.character_id}`)
   }
 
   render() {
@@ -57,7 +59,7 @@ class ElementScreen extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createElement: (element) => dispatch(createElement(element)),
+    createElement: (element, history) => dispatch(createElement(element, history)),
   }
 }
 
