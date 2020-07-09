@@ -26,7 +26,7 @@ class MainScreen extends React.Component {
         <Route 
           path="/characters/:characterId"
           render={routerProps => {
-            return <CharacterScreen {...routerProps} characters={this.props.characters} />
+            return <CharacterScreen {...routerProps} />
           }}
         />
         <Route

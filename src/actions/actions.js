@@ -16,6 +16,17 @@ export const createElement = (element) => {
   }
 }
 
+export const fetchCharacter = (characterId) => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING'})
+    fetch(`http://localhost:3001/api/characters/${characterId}`).then(response => {
+      return response.json()
+    }).then(responseJSON => {
+      dispatch({ type: 'FETCH_CHARACTER', character: responseJSON})
+    })
+  }
+}
+
 export const createCharacter = (character) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})

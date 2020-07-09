@@ -31,32 +31,44 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
-    console.log("joj")
+    console.log("fetching Users")
     this.props.fetchUsers()
   }
 
   makeCharacters() {
     if (this.props.users.length > 0) {
-      console.log ("joj")
       return this.props.users.map(user => user.characters).flat()
     } else {
       return []
     }
   }
 
-
+  loadingBuffer = () => {
+    if (this.state && this.state.loading) {
+      return <h1>LOADING</h1>
+    } else {
+      return (<div>
+        <div className="menu-screen">
+          {this.props.users.map(user => <UserContainer user={user}/>) }
+        </div>
+        <MainScreen characters={this.makeCharacters()} />
+      </div>)
+    }
+  }
 
   render() {
     return (
       <div className="App">
         <Navbar mouse={this.props} />
-        <div className="menu-screen">
-          
-        {this.props.users.map(user => <UserContainer user={user}/>) }
 
-        </div>
+        {this.loadingBuffer()}
 
-        <MainScreen characters={this.makeCharacters()} />
+        {/* <div>
+          <div className="menu-screen">
+            {this.props.users.map(user => <UserContainer user={user}/>) }
+          </div>
+          <MainScreen characters={this.makeCharacters()} />
+        </div> */}
 
       </div>
     );
