@@ -5,7 +5,7 @@ class AboutScreen extends React.Component {
 
     render() {
       return (
-        <h1>This is the Ultimate!</h1>
+        <h2>This goal of this application is to provide users with customizable layouts and aesthetics for organizing elements. </h2>
       );
     }
 

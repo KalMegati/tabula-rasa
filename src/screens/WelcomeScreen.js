@@ -5,7 +5,7 @@ class WelcomeScreen extends React.Component {
 
     render() {
       return (
-        <h1>Welcome New Galaxy!</h1>
+        <h1 className="center-stage"><i>Tabula Rasa</i> ~ "Blank Slate"</h1>
       );
     }
 

@@ -46,7 +46,6 @@ class Element extends React.Component {
 
     return (
       <div className="element-screen">
-        <p>{active}</p>
         <div className="card text-white bg-primary mb-3">
           {this.renderOrBox(icon1, label1, 0, 1, activity_array)}
           {this.renderOrBox(icon2, label2, 2, 3, activity_array)}
