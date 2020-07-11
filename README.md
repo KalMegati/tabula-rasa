@@ -1,3 +1,13 @@
+# Tabula Rasa
+
+This app is designed to allow users to create character sheets customizable in appearance and aesthetic.
+
+Until I've got more written here, check out the Tabula-Rasa-Demo file on this repo for a video walkthrough, which can also be found linked at:
+
+https://drive.google.com/file/d/1NLbyjJI--nLszdhn2GBTuJrralh1UaDs/view?usp=sharing
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
