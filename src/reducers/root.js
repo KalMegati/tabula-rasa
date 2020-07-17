@@ -3,13 +3,6 @@ const origStore = { users: [], character: {elements: []}, loading: true, user_id
 export default function root(state = origStore, action) {
 
     switch(action.type) {
-      
-      // case 'SELECT_STYLE':
-      //   localStorage.setItem("style", action.style)
-      //   return {
-      //     ...state,
-      //     style: action.style,
-      //   }
 
       case 'LOADING':
         return {
@@ -33,7 +26,7 @@ export default function root(state = origStore, action) {
         return {
           ...state,
           users: [
-            ...state.users.filter(user => user != updatedUser),
+            ...state.users.filter(user => user !== updatedUser),
             updatedUser
           ],
           loading: false

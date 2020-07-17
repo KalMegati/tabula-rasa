@@ -20,13 +20,6 @@ class CharacterScreen extends React.Component {
     return ((this.props.character.id != nextProps.match.params.characterId) || (this.props.character.entities != nextProps.character.entities))
   }
 
-  // character = () => {
-  //   const id = parseInt(this.props.match.params.characterId)
-  //   return this.props.characters.find(
-  //     character => character.id === id
-  //   )
-  // }
-
   makeElements = () => {
     return this.props.character.elements.map(element => <Element element={element} />)
   }

@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import App from '../App'
 import '../App.css';
 import { connect } from 'react-redux';
 

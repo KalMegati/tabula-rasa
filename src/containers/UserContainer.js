@@ -1,7 +1,6 @@
 // Displays User and conditionally their Characters
 
 import React from 'react';
-import { connect } from 'react-redux';
 
 import UserButton from '../components/UserButton'
 import CharactersContainer from './CharactersContainer'

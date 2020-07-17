@@ -9,9 +9,7 @@ import NewSheetScreen from './NewSheetScreen'
 import CharacterScreen from './CharacterScreen'
 import ElementScreen from './ElementScreen'
 // import CharacterSheet from '../components/CharacterSheet'
- 
-// Here we add `match` to the arguments so we can access the path information 
-// in `routerProps` that is passed from App.js 
+
 class MainScreen extends React.Component {
 
   render() {

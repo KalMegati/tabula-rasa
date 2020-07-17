@@ -2,7 +2,6 @@
 // to display a user's characters
 
 import React from 'react';
-import { connect } from 'react-redux';
 
 class UserButton extends React.Component {
 
