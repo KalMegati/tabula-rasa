@@ -3,18 +3,11 @@
 
 import React from 'react';
 
-class UserButton extends React.Component {
-
-    render() {
-        return (
-            <button
-                type="button"
-                className="btn btn-primary btn-sm btn-block"
-                onClick={() => this.props.activate(this.props.user.handle)}
-            >{this.props.user.handle}</button>
-        );
-    }
-
-}
+const UserButton = (props) =>
+    <button
+        type="button"
+        className="btn btn-primary btn-sm btn-block"
+        onClick={() => props.activate(props.user.handle)}
+    >{props.user.handle}</button>;
 
 export default UserButton
