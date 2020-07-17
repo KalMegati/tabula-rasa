@@ -2,7 +2,47 @@
 
 This app is designed to allow users to create character sheets customizable in appearance and aesthetic.
 
-Until I've got more written here, check out the Tabula-Rasa-Demo file on this repo for a video walkthrough, which can also be found linked at:
+---
+
+# Installation
+
+1) Clone the repo:
+`git clone git@github.com:KalMegati/tabula-rasa.git`
+
+2) Enter the repo directory:
+`cd tabula-rasa`
+
+3) Running this application will require two terminals open at once, one in the repo root and one within the repo backend
+`cd back-end-api`
+
+4) Within the backend, install the bundle to ensure your system has all the necessary extensions:
+`bundle install`
+
+5) Seeding (Optional)
+If you would like some starter elements to see how the site displays, enter the command:
+
+`rake db:seed`
+
+This will provide you with content for testing.
+
+# Execution
+
+1) In the terminal, while in the backend directory, start the rails server:
+`rails s`
+This server must be running while you are using the application.
+
+2) In the repo root, start the npm server:
+`npm start`
+This server must also be running while you are using the application.
+
+4) Go to the following path in an internet browser, preferably Google Chrome:
+`http://localhost:3000/`
+
+# Usage
+
+The rails server and npm server must both remain running while using the application, or changes made to users and characters will not persist and the app may crash.
+
+See the included file "Tabula-Rasa-Demo.mp4" for a video demonstration. This video is also linked following:
 
 https://drive.google.com/file/d/1NLbyjJI--nLszdhn2GBTuJrralh1UaDs/view?usp=sharing
 
