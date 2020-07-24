@@ -10,7 +10,6 @@ import MainScreen from './screens/MainScreen'
 class App extends React.Component {
 
   componentDidMount() {
-    console.log("fetching Users")
     this.props.fetchUsers()
   }
 
@@ -23,7 +22,7 @@ class App extends React.Component {
   }
 
   loadingBuffer = () => {
-    if (this.state && this.state.loading) {
+    if (this.state && this.state.loading) { // conditional prevents crash if state does not exist yet
       return <h1>LOADING</h1>
     } else {
       return (<div>
@@ -40,7 +39,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar mouse={this.props} />
 
-        {this.loadingBuffer()}
+        {this.loadingBuffer()} {/* renders a loading message during server requests */}
 
       </div>
     );

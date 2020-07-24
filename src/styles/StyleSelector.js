@@ -22,7 +22,7 @@ class StyleSelector extends React.Component {
     }
 
     render() {
-        return <Suspense fallback={<div>Loading...</div>}>
+        return <Suspense fallback={<div>Loading...</div>}> {/* will wait for the component returned by React.lazy() */}
             {this.styleSelect(this.props.style)}
         </Suspense>
     }

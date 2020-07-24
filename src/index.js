@@ -14,9 +14,8 @@ import StyleSelector from './styles/StyleSelector'
 let store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <Router>
+  <Router> {/* included as outermost level so Route can be included anywhere without calling another BrowserRouter */}
     <Provider store={store}>
-      {/* <App /> */}
       <StyleSelector /> 
     </Provider>
   </Router>,
