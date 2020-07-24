@@ -99,7 +99,7 @@ class ElementScreen extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createElement: (element, history) => dispatch(createElement(element, history)),
+    createElement: (element, history) => dispatch(createElement(element, history))
   }
 }
 
