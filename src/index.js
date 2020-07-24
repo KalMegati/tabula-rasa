@@ -10,8 +10,15 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import StyleSelector from './styles/StyleSelector'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-let store = createStore(rootReducer, applyMiddleware(thunk))
+// let store = createStore(rootReducer, applyMiddleware(thunk))
+
+
+const store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk)
+  // other store enhancers if any
+));
 
 ReactDOM.render(
   <Router> {/* included as outermost level so Route can be included anywhere without calling another BrowserRouter */}
