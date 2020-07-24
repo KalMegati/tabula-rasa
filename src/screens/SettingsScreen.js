@@ -1,3 +1,5 @@
+// updates User information, currently only updates styling
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateUser } from '../actions/actions'
@@ -14,7 +16,6 @@ class SettingsScreen extends React.Component {
   }
 
   handleSubmit = () => {
-    // console.log(this.state.stateStyle)
     this.props.updateUser({style: this.state.stateStyle}, this.props.user_id)
   }
 

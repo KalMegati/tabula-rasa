@@ -1,3 +1,5 @@
+// handles User creation, login, and logout
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createUser, loginUser, logoutUser } from '../actions/actions'

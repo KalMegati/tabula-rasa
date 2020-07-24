@@ -1,3 +1,5 @@
+// creates new Character belonging to the current User
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createCharacter } from '../actions/actions'
@@ -45,5 +47,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewSheetScreen)
-
-// export default NewSheetScreen
