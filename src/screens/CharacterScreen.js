@@ -1,3 +1,5 @@
+// displays Character sheet with name, blurb, and Elements
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -16,7 +18,7 @@ class CharacterScreen extends React.Component {
     this.props.fetchCharacter(id)
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps) { // nextProps handed down by routerProps
     return ((this.props.character.id != nextProps.match.params.characterId) || (this.props.character.entities != nextProps.character.entities))
   }
 
@@ -25,7 +27,6 @@ class CharacterScreen extends React.Component {
   }
 
   loadingBuffer = () => {
-    // if (this.props.character.id) {
       return (<div>
         <h1>{this.props.character.name}</h1>
         <br />
@@ -37,9 +38,6 @@ class CharacterScreen extends React.Component {
           >New Element</button>
         </NavLink>
       </div>)
-    // } else {
-    //   return <h1>LOADING</h1>
-    // }
   }
 
   render() {

@@ -1,9 +1,10 @@
+// information box to display Element, modular structure chosen by User
+
 import React from 'react';
 
 class Element extends React.Component {
 
-  renderOrNot = (className, entry, index, legend) => {
-    // debugger
+  renderOrNot = (className, entry, index, legend) => { // removes text box if unneeded
     if (legend[index] === "0") {
       return null
     } else {
@@ -13,7 +14,7 @@ class Element extends React.Component {
     }
   }
 
-  renderOrBox = (entry1, entry2, index1, index2, legend) => {
+  renderOrBox = (entry1, entry2, index1, index2, legend) => { // removes icon-label row if unneeded
     if (legend[index1] === "0" && legend[index2] === "0") {
       return null
     } else {
@@ -24,7 +25,7 @@ class Element extends React.Component {
     }
   }
 
-  renderOrLine = (index, legend) => {
+  renderOrLine = (index, legend) => { // removes text separation line if unneeded
     if (legend[index] === "0") {
       return null
     } else {
@@ -39,7 +40,7 @@ class Element extends React.Component {
       label1, label2, label3,
       text1, text2, text3,
       active
-    } = this.props.element
+    } = this.props.element // handed down from CharacterScreen or ElementScreen
 
     const activity_array = active.split("")
 

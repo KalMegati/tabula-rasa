@@ -1,3 +1,5 @@
+// form for creating an Element, choosing its text and displayed boxes
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createElement } from '../actions/actions'
@@ -24,11 +26,8 @@ class ElementScreen extends React.Component {
     event.preventDefault()
     this.props.createElement(
       {...this.state, active: this.state.active_array.join("")},
-      this.props.history
+      this.props.history // sends history to the actions.js so that page will redirect on promise return
     )
-    // .then(response => this.props.history.push(`/characters/${this.state.character_id}`))
-    // setTimeout(() => this.props.history.push(`/characters/${this.state.character_id}`), 1000)
-    // this.props.history.push(`/characters/${this.state.character_id}`)
   }
 
   makeCheckboxes = () => {
@@ -47,7 +46,6 @@ class ElementScreen extends React.Component {
   }
 
   handleCheck = (e) => {
-    // e.target.checked === false
     const box = document.getElementById(`input${e.target.name}`)
     box.disabled = !box.disabled
     const toggle = () => {
@@ -98,8 +96,6 @@ class ElementScreen extends React.Component {
   }
 
 }
-
-// const mapStateToProps = state => {return {user_id: state.user_id}}
 
 const mapDispatchToProps = (dispatch) => {
   return {
