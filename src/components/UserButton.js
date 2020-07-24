@@ -7,7 +7,7 @@ const UserButton = (props) =>
     <button
         type="button"
         className="btn btn-primary btn-sm btn-block"
-        onClick={() => props.activate(props.user.handle)}
+        onClick={() => props.activate(props.user.handle)} // handed down by UserContainer
     >{props.user.handle}</button>;
 
 export default UserButton
